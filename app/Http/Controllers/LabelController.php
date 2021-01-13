@@ -10,8 +10,15 @@ class LabelController extends BaseController
 {
     public function labels(LabelRepository $repository, Request $request)
     {
-        $data = $request->all();
+        $params = $request->all();
 
         return $repository->labels();
+    }
+
+    public function getLabelInfo(LabelRepository $repository, Request $request)
+    {
+        $params = $request->all();
+
+        return $repository->getLabelInfo($params);
     }
 }

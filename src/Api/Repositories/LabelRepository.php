@@ -25,4 +25,12 @@ class LabelRepository extends Repository
             ]);
         });
     }
+
+    public function getLabelInfo($params)
+    {
+        $label = Arr::get($params, 'label');
+        $res = Article::where('label', $label)->get();
+
+        return $res;
+    }
 }

@@ -37,4 +37,18 @@ class ArticleRepository extends Repository
             });
     }
 
+    public function getArticleById($id)
+    {
+        $builder = Article::query();
+        $builder->where('article_id', $id);
+        $res = $builder->first();
+
+      /* 更新后台浏览数量数据start */
+        $res->visited += 1;
+        $res->save();
+      /* 更新浏览数据end */
+
+        return $res;
+    }
+
 }

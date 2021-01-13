@@ -10,8 +10,15 @@ class CategoryController extends BaseController
 {
     public function categories(CategoryRepository $repository, Request $request)
     {
-        $data = $request->all();
+        $params = $request->all();
 
         return $repository->categories();
+    }
+
+    public function getManyCategories(CategoryRepository $repository, Request $request)
+    {
+        $params = $request->all();
+
+        return $repository->getManyCategories($params);
     }
 }

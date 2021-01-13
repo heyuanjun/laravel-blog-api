@@ -31,16 +31,19 @@ Route::group([
     Route::group(['prefix' => 'articles'], function () {
         Route::get('', [ArticleController::class, 'articles']);
         Route::get('recent', [ArticleController::class, 'recentArticles']);
+        Route::get('{id}/detail', [ArticleController::class, 'getArticleById']);
     });
 
     // categories
     Route::group(['prefix' => 'categories'], function () {
         Route::get('', [CategoryController::class, 'categories']);
+        Route::post('many', [CategoryController::class, 'getManyCategories']);
     });
 
     // labels
     Route::group(['prefix' => 'labels'], function () {
         Route::get('', [LabelController::class, 'labels']);
+        Route::post('info', [LabelController::class, 'getLabelInfo']);
     });
 
     // messages

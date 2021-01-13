@@ -19,6 +19,7 @@ class EnableCrossRequestMiddleware
         $origin = $request->server('HTTP_ORIGIN') ? $request->server('HTTP_ORIGIN') : '';
         $allow_origin = [
             'http://localhost:8081',//允许访问
+            // 'http://localhost:8080',//允许访问
         ];
         if (in_array($origin, $allow_origin)) {
             $response->header('Access-Control-Allow-Origin', $origin);

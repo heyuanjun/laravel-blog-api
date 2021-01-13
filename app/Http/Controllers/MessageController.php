@@ -10,7 +10,7 @@ class MessageController extends BaseController
 {
     public function messages(MessageRepository $repository, Request $request)
     {
-        $data = $request->all();
+        $params = $request->all();
 
         return $repository->messages();
     }

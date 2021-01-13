@@ -8,6 +8,8 @@ class Article extends Model
 {
     protected $table = "article";
 
+    public $timestamps = false;
+
     protected $fillable = [
         'id',
         'article_categroy',

@@ -27,4 +27,12 @@ class CategoryRepository extends Repository
             $builder->groupBy('article_category');
         });
     }
+
+    public function getManyCategories($params)
+    {
+        $category = Arr::get($params, 'category');
+
+        $res = Article::where('article_category', $category)->get();
+        return $res;
+    }
 }
