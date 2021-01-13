@@ -14,4 +14,12 @@ class MessageController extends BaseController
 
         return $repository->messages();
     }
+
+    public function leaveMessage(MessageRepository $repository, Request $request)
+    {
+        $params = $request->all();
+
+        return $repository->leaveMessage($params);
+    }
+
 }

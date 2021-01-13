@@ -49,6 +49,7 @@ Route::group([
     // messages
     Route::group(['prefix' => 'messages'], function () {
         Route::get('', [MessageController::class, 'messages']);
+        Route::post('leave', [MessageController::class, 'leaveMessage']);
     });
 
     // music
