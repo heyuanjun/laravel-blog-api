@@ -21,4 +21,20 @@ class ArticleRepository extends Repository
             function (Builder $builder) {
         });
     }
+
+    public function recentArticles()
+    {
+        return $this->getSearchAbleData(Article::class, ['title'],
+            function (Builder $builder) {
+                $builder->select([
+                    'title',
+                    'label',
+                    'article_id',
+                    'time',
+                ]);
+                $builder->orderBy('id');
+                $builder->limit(10);
+            });
+    }
+
 }

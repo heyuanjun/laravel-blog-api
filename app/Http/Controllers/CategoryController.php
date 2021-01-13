@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 class CategoryController extends BaseController
 {
-    public function articles(CategoryRepository $repository, Request $request)
+    public function categories(CategoryRepository $repository, Request $request)
     {
         $data = $request->all();
 

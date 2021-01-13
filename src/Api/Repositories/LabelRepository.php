@@ -12,19 +12,17 @@ namespace Blog\Api\Repositories;
 use Blog\Api\Models\Article;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
 
-class CategoryRepository extends Repository
+class LabelRepository extends Repository
 {
-    public function categories()
+    public function labels()
     {
         return $this->getSearchAbleData(Article::class, ['title'],
             function (Builder $builder) {
             $builder->select([
-                'article_category',
-                DB::raw("COUNT(article_category)")
+                'id',
+                'label',
             ]);
-            $builder->groupBy('article_category');
         });
     }
 }

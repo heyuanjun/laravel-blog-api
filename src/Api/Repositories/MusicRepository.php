@@ -17,6 +17,6 @@ class MusicRepository extends Repository
 {
     public function music($id)
     {
-        return Music::findOrFail($id);
+        return  Music::findOrFail($id);
     }
 }

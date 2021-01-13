@@ -16,7 +16,7 @@ class Article extends Model
         'accessPulish_count',
         'visited',
         'like_Star',
-        'lable',
+        'label',
         'content',
         'title',
         'time',

@@ -14,4 +14,12 @@ class ArticleController extends BaseController
 
         return $repository->articles();
     }
+
+    public function recentArticles(ArticleRepository $repository, Request $request)
+    {
+        $data = $request->all();
+
+        return $repository->recentArticles();
+    }
+
 }

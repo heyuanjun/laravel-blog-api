@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LabelController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\MusicController;
 use Illuminate\Http\Request;
@@ -29,11 +30,17 @@ Route::group([
     // articles
     Route::group(['prefix' => 'articles'], function () {
         Route::get('', [ArticleController::class, 'articles']);
+        Route::get('recent', [ArticleController::class, 'recentArticles']);
     });
 
     // categories
     Route::group(['prefix' => 'categories'], function () {
         Route::get('', [CategoryController::class, 'categories']);
+    });
+
+    // labels
+    Route::group(['prefix' => 'labels'], function () {
+        Route::get('', [LabelController::class, 'labels']);
     });
 
     // messages
@@ -42,8 +49,7 @@ Route::group([
     });
 
     // music
-    Route::group(['prefix' => 'music'], function () {
-        Route::get('{id}', [MusicController::class, 'music']);
-    });
+    Route::get('music/{id}', [MusicController::class, 'music']);
+
 
 });
