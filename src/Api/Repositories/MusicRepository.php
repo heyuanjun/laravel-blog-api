@@ -12,6 +12,7 @@ namespace Blog\Api\Repositories;
 use Blog\Api\Models\Music;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
+use Blog\Common\Repositories\Repository;
 
 class MusicRepository extends Repository
 {

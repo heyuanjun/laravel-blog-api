@@ -13,6 +13,7 @@ use Blog\Api\Models\Article;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Blog\Common\Repositories\Repository;
 
 class CategoryRepository extends Repository
 {

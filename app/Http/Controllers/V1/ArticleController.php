@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1;
 
+use App\Http\Controllers\Controller;
 use Blog\Api\Repositories\ArticleRepository;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 
-class ArticleController extends BaseController
+class ArticleController extends Controller
 {
     public function articles(ArticleRepository $repository, Request $request)
     {

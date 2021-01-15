@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1;
 
+use App\Http\Controllers\Controller;
 use Blog\Api\Repositories\MessageRepository;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 
-class MessageController extends BaseController
+class MessageController extends Controller
 {
     public function messages(MessageRepository $repository, Request $request)
     {

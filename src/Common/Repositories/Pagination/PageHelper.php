@@ -7,7 +7,7 @@
  * Time: 5:59 下午
  */
 
-namespace Blog\Api\Repositories\Pagination;
+namespace Blog\Common\Repositories\Pagination;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Builder;

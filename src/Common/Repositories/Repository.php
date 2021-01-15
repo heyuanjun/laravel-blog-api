@@ -7,11 +7,11 @@
  * Time: 5:59 下午
  */
 
-namespace Blog\Api\Repositories;
+namespace Blog\Common\Repositories;
 
-use Blog\Api\Helpers\Filterable;
-use Blog\Api\PipelineQuery;
-use Blog\Api\Repositories\Pagination\PageHelper;
+use Blog\Common\Helpers\Filterable;
+use Blog\Common\PipelineQuery;
+use Blog\Common\Repositories\Pagination\PageHelper;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;

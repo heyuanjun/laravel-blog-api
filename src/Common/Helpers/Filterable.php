@@ -7,7 +7,7 @@
  * Time: 5:59 下午
  */
 
-namespace Blog\Api\Helpers;
+namespace Blog\Common\Helpers;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;

@@ -12,6 +12,7 @@ namespace Blog\Api\Repositories;
 use Blog\Api\Models\Article;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
+use Blog\Common\Repositories\Repository;
 
 class LabelRepository extends Repository
 {

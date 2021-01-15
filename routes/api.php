@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', ['prefix' => 'api',
-    'namespace' => 'App\Http\Controllers',
+    'namespace' => 'App\Http\Controllers\V1',
     'middleware' => ['cors']], function () use ($api) {
 
     // articles

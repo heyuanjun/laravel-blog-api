@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1;
 
+use App\Http\Controllers\Controller;
 use Blog\Api\Repositories\LabelRepository;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller as BaseController;
 
-class LabelController extends BaseController
+class LabelController extends Controller
 {
     public function labels(LabelRepository $repository, Request $request)
     {

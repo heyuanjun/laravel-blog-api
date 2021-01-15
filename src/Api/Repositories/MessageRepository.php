@@ -9,10 +9,10 @@
 
 namespace Blog\Api\Repositories;
 
-use Blog\Api\Models\AccessMessage;
 use Blog\Api\Models\LeaveMessage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
+use Blog\Common\Repositories\Repository;
 
 class MessageRepository extends Repository
 {

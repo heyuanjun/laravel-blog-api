@@ -7,7 +7,7 @@
  * Time: 5:59 下午
  */
 
-namespace Blog\Api;
+namespace Blog\Common;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Model;
