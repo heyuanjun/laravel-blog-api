@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LabelController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\MusicController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,41 +14,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', function () {
-    return phpinfo();
-});
+$api = app('Dingo\Api\Routing\Router');
 
-Route::group([
-    'middleware' => ['cors']
-], function () {
+$api->version('v1', ['prefix' => 'api',
+    'namespace' => 'App\Http\Controllers',
+    'middleware' => ['cors']], function () use ($api) {
 
     // articles
-    Route::group(['prefix' => 'articles'], function () {
-        Route::get('', [ArticleController::class, 'articles']);
-        Route::get('recent', [ArticleController::class, 'recentArticles']);
-        Route::get('{id}/detail', [ArticleController::class, 'getArticleById']);
+    $api->group(['prefix' => 'articles'], function () use ($api) {
+        $api->get('', 'ArticleController@articles');
+        $api->get('recent', 'ArticleController@recentArticles');
+        $api->get('{id}/detail', 'ArticleController@getArticleById');
     });
 
     // categories
-    Route::group(['prefix' => 'categories'], function () {
-        Route::get('', [CategoryController::class, 'categories']);
-        Route::post('many', [CategoryController::class, 'getManyCategories']);
+    $api->group(['prefix' => 'categories'], function () use ($api) {
+        $api->get('', 'CategoryController@categories');
+        $api->post('many', 'CategoryController@getManyCategories');
     });
 
     // labels
-    Route::group(['prefix' => 'labels'], function () {
-        Route::get('', [LabelController::class, 'labels']);
-        Route::post('info', [LabelController::class, 'getLabelInfo']);
+    $api->group(['prefix' => 'labels'], function () use ($api) {
+        $api->get('', 'LabelController@labels');
+        $api->post('info', 'LabelController@getLabelInfo');
     });
 
     // messages
-    Route::group(['prefix' => 'messages'], function () {
-        Route::get('', [MessageController::class, 'messages']);
-        Route::post('leave', [MessageController::class, 'leaveMessage']);
+    $api->group(['prefix' => 'messages'], function () use ($api) {
+        $api->get('', 'MessageController@messages');
+        $api->post('leave', 'MessageController@leaveMessage');
     });
 
     // music
-    Route::get('music/{id}', [MusicController::class, 'music']);
-
+    $api->get('music/{id}', 'MusicController@music');
 
 });
