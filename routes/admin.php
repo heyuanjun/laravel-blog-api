@@ -23,12 +23,12 @@ $api->version('v1', ['prefix' => 'admin',
     $api->post('register', 'AuthController@register');
     $api->post('login', 'AuthController@login');
 
-    // $api->group([], function () use ($api) {
+    $api->group(['middleware' => 'refresh'], function () use ($api) {
         $api->post('logout', 'AuthController@logout');
         $api->post('refresh', 'AuthController@refresh');
         $api->post('adminInfo', 'AuthController@getAdminWithMe');
         $api->get('test', 'AuthController@test');
         $api->get('guard', 'AuthController@guard');
-    // });
+    });
 
 });
