@@ -133,8 +133,4 @@ class AuthController extends Controller
         return Auth::guard($this->guard);
     }
 
-    public function test(){
-        echo "test!!";
-    }
-
 }

@@ -27,8 +27,14 @@ $api->version('v1', ['prefix' => 'admin',
         $api->post('logout', 'AuthController@logout');
         $api->post('refresh', 'AuthController@refresh');
         $api->post('adminInfo', 'AuthController@getAdminWithMe');
-        $api->get('test', 'AuthController@test');
         $api->get('guard', 'AuthController@guard');
+
+        // articles
+        $api->group(['prefix' => 'articles'], function () use ($api) {
+            $api->get('', 'ArticleController@articles');
+            $api->get('recent', 'ArticleController@recentArticles');
+            $api->get('{id}/detail', 'ArticleController@getArticleById');
+        });
     });
 
 });
