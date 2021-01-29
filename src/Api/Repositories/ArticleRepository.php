@@ -16,6 +16,11 @@ use Blog\Common\Repositories\Repository;
 
 class ArticleRepository extends Repository
 {
+    public function pushArticle($params)
+    {dd($params);
+       return Article::create($params);
+    }
+
     public function articles()
     {
         return $this->getSearchAbleData(Article::class, ['title'],
@@ -50,6 +55,11 @@ class ArticleRepository extends Repository
       /* 更新浏览数据end */
 
         return $res;
+    }
+
+    public function deleteArticleById($id)
+    {
+        return Article::destroy($id);
     }
 
 }

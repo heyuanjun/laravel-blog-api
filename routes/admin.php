@@ -34,6 +34,8 @@ $api->version('v1', ['prefix' => 'admin',
             $api->get('', 'ArticleController@articles');
             $api->get('recent', 'ArticleController@recentArticles');
             $api->get('{id}/detail', 'ArticleController@getArticleById');
+            $api->post('{id}/delete', 'ArticleController@deleteArticleById');
+            $api->post('push', 'ArticleController@pushArticle');
         });
     });
 
