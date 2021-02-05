@@ -35,8 +35,16 @@ $api->version('v1', ['prefix' => 'admin',
             $api->get('recent', 'ArticleController@recentArticles');
             $api->get('{id}/detail', 'ArticleController@getArticleById');
             $api->post('{id}/delete', 'ArticleController@deleteArticleById');
-            $api->post('push', 'ArticleController@pushArticle');
+            $api->post('write', 'ArticleController@writeArticle');
         });
+
+        // admins
+        $api->group(['prefix' => 'admins'], function () use ($api) {
+            $api->get('', 'AdminController@admins');
+            $api->post('write', 'AdminController@writeAdmin');
+            $api->post('{id}/delete', 'AdminController@deleteAdminById');
+        });
+
     });
 
 });

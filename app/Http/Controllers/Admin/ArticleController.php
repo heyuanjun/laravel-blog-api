@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Blog\Api\Repositories\ArticleRepository;
+use Blog\Admin\Repositories\ArticleRepository;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function pushArticle(ArticleRepository $repository, Request $request)
+    public function writeArticle(ArticleRepository $repository, Request $request)
     {
         $params = $request->all();
 
-        return $repository->pushArticle($params);
+        return $repository->writeArticle($params);
     }
 
     public function articles(ArticleRepository $repository, Request $request)
