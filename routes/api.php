@@ -48,4 +48,9 @@ $api->version('v1', ['prefix' => 'api',
     // music
     $api->get('music/{id}', 'MusicController@music');
 
+    // messages
+    $api->group(['prefix' => 'photos'], function () use ($api) {
+        $api->get('', 'PhotoController@photos');
+    });
+
 });
