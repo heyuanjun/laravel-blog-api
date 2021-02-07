@@ -22,6 +22,7 @@ $api->version('v1', ['prefix' => 'admin',
 
     $api->post('register', 'AuthController@register');
     $api->post('login', 'AuthController@login');
+    $api->post('photos/upload', 'PhotoController@uploadPhoto');
 
     $api->group(['middleware' => 'refresh'], function () use ($api) {
         $api->post('logout', 'AuthController@logout');
@@ -43,6 +44,11 @@ $api->version('v1', ['prefix' => 'admin',
             $api->get('', 'AdminController@admins');
             $api->post('write', 'AdminController@writeAdmin');
             $api->post('{id}/delete', 'AdminController@deleteAdminById');
+        });
+
+        // photos
+        $api->group(['prefix' => 'photos'], function () use ($api) {
+            $api->post('write', 'PhotoController@writePhoto');
         });
 
     });
