@@ -36,7 +36,7 @@ $api->version('v1', ['prefix' => 'api',
     // labels
     $api->group(['prefix' => 'labels'], function () use ($api) {
         $api->get('', 'LabelController@labels');
-        $api->post('info', 'LabelController@getLabelInfo');
+        $api->get('info', 'LabelController@getLabelInfo');
     });
 
     // messages
